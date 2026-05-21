@@ -14,6 +14,9 @@ import java.util.List;
  * the country code "can" to several languages.
  */
 public class InLabByHandTranslator implements Translator {
+    // TODO Checkstyle: Static variable definition in wrong order.
+    public static final String CANADA = "can";
+
     /**
      * Returns the language abbreviations for all languages whose translations are
      * available for the given country.
@@ -29,9 +32,6 @@ public class InLabByHandTranslator implements Translator {
         }
         return new ArrayList<>();
     }
-
-    // TODO Checkstyle: Static variable definition in wrong order.
-    public static final String CANADA = "can";
 
     /**
      * Returns the country abbreviations for all countries whose translations are
@@ -55,13 +55,13 @@ public class InLabByHandTranslator implements Translator {
     public String translate(String country, String language) {
         // TODO Checkstyle: Return count is 5 (max allowed for non-void methods/ lambdas is 2).
         // TODO Checkstyle: String literal expressions should be on the left side of an equals comparison
-        if (!country.equals("can")) {
+        if (!"can".equals(country)) {
             return null;
         }
-        if (language.equals("de")) {
+        if ("de".equals(language)) {
             return "Kanada";
         }
-        else if (language.equals("en")) {
+        else if ("en".equals(language)) {
             return "Canada";
         }
         else if ("zh".equals(language)) {
